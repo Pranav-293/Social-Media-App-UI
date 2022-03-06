@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         const CircleAvatar(
                           backgroundImage: NetworkImage(
-                              "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+                              "https://images.unsplash.com/photo-1646442423753-7a91b6f2f5d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"),
                         ),
                         const SizedBox(
                           width: 8.0,
