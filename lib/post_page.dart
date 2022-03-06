@@ -41,7 +41,7 @@ class _PostPageState extends State<PostPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              height: 450.0,
+              height: 420.0,
               child: Container(),
             ), //post image
             Column(
@@ -53,9 +53,12 @@ class _PostPageState extends State<PostPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           CircleAvatar(
                             backgroundImage: NetworkImage(widget.dpImage),
+                            radius: 28,
                           ),
                           const SizedBox(
                             width: 8.0,
@@ -67,33 +70,28 @@ class _PostPageState extends State<PostPage> {
                               fontSize: 18,
                             ),
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(12.0),
-                            child: liked
-                                ? InkWell(
-                              onTap:()=>onLiked(),
-                              child: const Icon(
-                                Icons.favorite,
-                                size: 32,
-                                color: Colors.red,
-                              ),
-                            )
-                                : InkWell(
-                              onTap: ()=>onLiked(),
-                              child: const Icon(
-                                Icons.favorite_outline,
-                                size: 32,
-                                color: Colors.black38,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(12.0),
+                          const SizedBox(width: 96,),
+                          liked
+                              ? InkWell(
+                            onTap:()=>onLiked(),
                             child: const Icon(
-                              Icons.send,
+                              Icons.favorite,
+                              size: 32,
+                              color: Colors.red,
+                            ),
+                          )
+                              : InkWell(
+                            onTap: ()=>onLiked(),
+                            child: const Icon(
+                              Icons.favorite_outline,
                               size: 32,
                               color: Colors.black38,
                             ),
+                          ),
+                          const Icon(
+                            Icons.send,
+                            size: 32,
+                            color: Colors.black38,
                           ),
                         ],
                       ),
@@ -129,7 +127,21 @@ class _PostPageState extends State<PostPage> {
                           color: Colors.black38,
                         ),),
                       ),
-
+                      /* ListTile(
+                        leading:const CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+                        ),
+                        title: TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(34),
+                            ),
+                            labelText: 'Write Comment Here...',
+                          ),
+                        ),
+                      ),*/
                     ],
                   ),
                 ),
