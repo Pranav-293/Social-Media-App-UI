@@ -30,7 +30,7 @@ class _PostPageState extends State<PostPage> {
   }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           body: Stack(children: [
@@ -41,7 +41,7 @@ class _PostPageState extends State<PostPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              height: 420.0,
+              height: 400.0,
               child: Container(),
             ), //post image
             Column(
@@ -101,10 +101,13 @@ class _PostPageState extends State<PostPage> {
                       Text(
                         widget.caption,
                       ),
+                     const SizedBox(
+                       height: 12,
+                     ),
                      const  ListTile(
                         leading: CircleAvatar(
                           backgroundImage: NetworkImage(
-                              "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+                              "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"),
                         ),
                        trailing: Text("30m",style: TextStyle(
                          color: Colors.black38,
@@ -117,17 +120,17 @@ class _PostPageState extends State<PostPage> {
                       const  ListTile(
                         leading: CircleAvatar(
                           backgroundImage: NetworkImage(
-                              "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+                              "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80"),
                         ),
                         trailing: Text("30m",style: TextStyle(
                           color: Colors.black38,
                         ),),
-                        title: Text("Mammer",style: TextStyle(fontWeight: FontWeight.bold),),
-                        subtitle: Text("Wow! Nice place",style: TextStyle(
+                        title: Text("Shalley",style: TextStyle(fontWeight: FontWeight.bold),),
+                        subtitle: Text("Awesome",style: TextStyle(
                           color: Colors.black38,
                         ),),
                       ),
-                      /* ListTile(
+                      ListTile(
                         leading:const CircleAvatar(
                           backgroundImage: NetworkImage(
                               "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
@@ -141,7 +144,7 @@ class _PostPageState extends State<PostPage> {
                             labelText: 'Write Comment Here...',
                           ),
                         ),
-                      ),*/
+                      ),
                     ],
                   ),
                 ),
