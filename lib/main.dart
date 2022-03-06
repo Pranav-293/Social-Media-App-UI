@@ -170,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PostPage(
+                            builder: (context) => const PostPage(
                                   noOfLikes: 23,
                                   caption:
                                       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipis",
@@ -178,8 +178,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       "https://images.unsplash.com/photo-1645815431397-c01c1bee0e7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
                                   imgUrl:
                                       "https://images.unsplash.com/photo-1646106891137-45e054912427?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
-                                  isLiked: false,
-                                  onLiked: () {},
                                   userName: "Jhonas",
                                 )));
                   });
@@ -200,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PostPage(
+                            builder: (context) => const PostPage(
                                   noOfLikes: 23,
                                   caption:
                                       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipis",
@@ -208,8 +206,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       "https://images.unsplash.com/photo-1646077104752-6f61bfd5bf4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
                                   imgUrl:
                                       "https://images.unsplash.com/photo-1646309364429-cd59d7c2bcd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-                                  isLiked: false,
-                                  onLiked: () {},
                                   userName: "Michalle",
                                 )));
                   });

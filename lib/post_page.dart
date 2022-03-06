@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PostPage extends StatelessWidget {
+class PostPage extends StatefulWidget {
   const PostPage({
     Key? key,
     required this.noOfLikes,
-    required this.isLiked,
     required this.caption,
     required this.userName,
     required this.dpImage,
     required this.imgUrl,
-    required this.onLiked,
   }) : super(key: key);
 
   final String imgUrl;
@@ -17,9 +15,19 @@ class PostPage extends StatelessWidget {
   final String dpImage;
   final String caption;
   final int noOfLikes;
-  final bool isLiked;
-  final Function onLiked;
 
+  @override
+  State<PostPage> createState() => _PostPageState();
+}
+
+class _PostPageState extends State<PostPage> {
+
+  bool liked = false;
+  void onLiked(){
+    setState(() {
+      liked = !liked;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,7 +37,7 @@ class PostPage extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(imgUrl),
+                  image: NetworkImage(widget.imgUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -37,25 +45,23 @@ class PostPage extends StatelessWidget {
               child: Container(),
             ), //post image
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
                   padding: const EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SizedBox(height: 260,),
                       Row(
                         children: [
                           CircleAvatar(
-                            backgroundImage: NetworkImage(dpImage),
+                            backgroundImage: NetworkImage(widget.dpImage),
                           ),
                           const SizedBox(
                             width: 8.0,
                           ),
                           Text(
-                            userName,
+                            widget.userName,
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
@@ -63,9 +69,9 @@ class PostPage extends StatelessWidget {
                           ),
                           Container(
                             padding: const EdgeInsets.all(12.0),
-                            child: isLiked
+                            child: liked
                                 ? InkWell(
-                              onTap: onLiked(),
+                              onTap:()=>onLiked(),
                               child: const Icon(
                                 Icons.favorite,
                                 size: 32,
@@ -73,7 +79,7 @@ class PostPage extends StatelessWidget {
                               ),
                             )
                                 : InkWell(
-                              onTap: onLiked(),
+                              onTap: ()=>onLiked(),
                               child: const Icon(
                                 Icons.favorite_outline,
                                 size: 32,
@@ -95,8 +101,35 @@ class PostPage extends StatelessWidget {
                         height: 16,
                       ),
                       Text(
-                        caption,
+                        widget.caption,
                       ),
+                     const  ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+                        ),
+                       trailing: Text("30m",style: TextStyle(
+                         color: Colors.black38,
+                       ),),
+                       title: Text("Mammer",style: TextStyle(fontWeight: FontWeight.bold),),
+                       subtitle: Text("Wow! Nice place",style: TextStyle(
+                         color: Colors.black38,
+                       ),),
+                      ),
+                      const  ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
+                        ),
+                        trailing: Text("30m",style: TextStyle(
+                          color: Colors.black38,
+                        ),),
+                        title: Text("Mammer",style: TextStyle(fontWeight: FontWeight.bold),),
+                        subtitle: Text("Wow! Nice place",style: TextStyle(
+                          color: Colors.black38,
+                        ),),
+                      ),
+
                     ],
                   ),
                 ),
